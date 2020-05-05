@@ -1,8 +1,7 @@
 /***************************************************************************
 CSCI 241 - Assignment 7 - Fall 2017
 
-Programmer: 	Carlton Hunt & Joshua Dyra
-Z-ID:	    	z172974 &  z1798711
+Programmer: 	Carlton Hunt
 Section:    	3
 TA: 		Bhavana Mallineni
 Date Due:	11/17/2017
