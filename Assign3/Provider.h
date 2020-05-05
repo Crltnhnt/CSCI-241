@@ -3,8 +3,7 @@
 
 /**************************************************************************
    FILE:	Provider.h
-   AUTHOR:	Carlton Hunt & Josh Dyra
-   LOGON ID:	z1772974 & z1798711
+   AUTHOR:	Carlton Hunt
    TA:		Bhavana Mallineni
    Section:	3
    DUE DATE:	10/10/2017
