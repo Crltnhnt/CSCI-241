@@ -3,8 +3,7 @@
 
 /***********************************************************************
 // File:	ProviderDB.h
-// Author:	Carlton Hunt & Josh Dyra
-// Logon ID:	z1772974 & z1798711
+// Author:	Carlton Hunt
 // TA:		Bhavana Mallineni
 // Section:	3
 // Due Date:	10/10/2017
