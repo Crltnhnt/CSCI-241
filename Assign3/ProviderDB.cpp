@@ -1,7 +1,6 @@
 /********************************************************************
 // Program:	ProviderDB.cpp
-// Programmer:	Carlton Hunt & Josh dyra
-// LOGON ID:	z1772974 & z1798711
+// Programmer:	Carlton Hunt
 // TA:		Bhavana Mallineni
 // Section:	3
 // Date Due:	10/10/2017
