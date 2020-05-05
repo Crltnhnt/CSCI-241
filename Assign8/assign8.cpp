@@ -1,7 +1,6 @@
 /*********************************************************************
    PROGRAM:    CSCI 241 Assignment 8
-   PROGRAMMER: Carlton Hunt & Joshua Dyra
-   LOGON ID:   z1772974 & z1798711
+   PROGRAMMER: Carlton Hunt
    DUE DATE:   11/29/2017
 
    FUNCTION:   This program builds and sorts lists using the quick
