@@ -3,8 +3,7 @@
 
 /*************************************************************************
 FILE:		Stack.h
-AUTHOR:		Carlton Hunt & Josh Dyra
-Z-ID:		Z1772974 & Z1798711
+AUTHOR:		Carlton Hunt
 DUE DATE:	October 31st, 2017
 
 PURPOSE: Declarations for the Stack Class
