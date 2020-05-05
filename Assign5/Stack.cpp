@@ -1,7 +1,6 @@
 /*************************************************************************
 FILE:           Stack.cpp
-AUTHOR:         Carlton Hunt & Josh Dyra
-Z-ID:           Z1772974 & Z1798711
+AUTHOR:         Carlton Hunt
 DUE DATE:       October 31st, 2017
 
 PURPOSE:	This assignment is an exercise implementing the stack
