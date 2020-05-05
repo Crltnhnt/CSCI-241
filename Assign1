@@ -1,0 +1,165 @@
+/**********************************************************************
+*CSCI 241 - Assignment 1
+*
+*Programmer: #Z1772974 Carlton Hunt
+*
+* Section 3
+*TA: Bhavana Mallineni
+*
+*Purpose: Read data from providers.csv, push data to array and print it.
+**********************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
+#include <cstring>
+#include <string>
+
+using std::cerr; using std::endl; using std::cin; using std::cout; using std::ifstream; using std::setprecision; using std::string; using std::fixed;
+
+
+class Provider
+{
+
+	private:
+		// names class data members and the amount of characters
+		char	number[9], 
+				specialty[41], 
+				name[41], 
+				address_part1[41], 
+				address_part2[31],
+				city[21],
+				state[3],
+				zipcode[6],
+				pNumber[15];	
+	
+	public:
+		
+		// Declare methods of data members
+		Provider();
+		Provider(const char*, const char*, const char*, const char*, const char*, const char*, const char*, const char*, const char*);
+		
+		void print();
+};
+
+int build_provider_array(Provider);
+void print_provider_array(Provider, int);
+
+int build_provider_array(Provider provider_array[])
+{
+	ifstream inFile;
+	string number,
+	specialty,
+	name,
+	lName,
+	fName,
+	mInitial,
+	title,
+	address_part1,
+	address_part2,
+	city,
+	state,
+	zipcode,
+	pNumber;
+
+	// counts the arguments used in the c string array
+	int count = 0;	
+
+//opens providers.csv file to read off the list of records
+inFile.open("providers.csv");
+if(!inFile)
+{
+	// Program terminates if theres an error reading the file
+	cerr << "ERROR: Could not open 'providers.csv'. Terminating." << endl;
+	exit(-1);
+}
+
+// loop listing individual information
+while (getline(inFile, number,','))
+{
+	// Checks the order for the output section and calls the data member into function
+	
+	getline(inFile, specialty, ',');
+	getline(inFile, lName, ',');
+	getline(inFile, fName, ',');
+	getline(inFile, mInitial, ',');
+	getline(inFile, title, ',');
+	getline(inFile, address_part1, ',');
+	getline(inFile, address_part2, ',');
+	getline(inFile, city, ',');
+	getline(inFile, state, ',');
+	getline(inFile, zipcode, ',');
+	getline(inFile, pNumber);
+	
+	// concatenates the name in last name, first name, middle initial order. This organizes the name for output
+	
+	name = lName + " " + fName + " " + mInitial + ",";
+
+	
+	// strings the rest of the data members together in provider
+	Provider p(number.c_str(), name.c_str(), specialty.c_str(), address_part1.c_str(), address_part2.c_str(), 
+			   city.c_str(), state.c_str(), zipcode.c_str(), pNumber.c_str() );
+			   
+	provider_array[count] = p;
+	
+	count++;
+}
+
+return count;
+}
+
+void print_provider_array(Provider provider_array[], int h)
+{
+	for (int i = 0; i < h; i++)
+		{
+		  provider_array[i].print();
+		}	
+}
+
+// method that brings the provider class without returns
+Provider::Provider()
+{
+}
+
+// method that allows the data member to change values and copies over 
+Provider::Provider(const char* numberCP, const char* nameCP, const char* specialtyCP, const char* address_part1CP,
+				   const char* address_part2CP, const char* cityCP, const char* stateCP, const char* zipcodeCP, const char* pNumberCP)
+	{
+	  strcpy(number, numberCP);
+	  strcpy(name, nameCP);
+	  strcpy(specialty, specialtyCP);
+	  strcpy(address_part1, address_part1CP);
+	  strcpy(address_part2, address_part2CP);
+	  strcpy(city, cityCP);
+	  strcpy(state, stateCP);
+	  strcpy(zipcode, zipcodeCP);
+	  strcpy(pNumber, pNumberCP);
+	}
+	
+	// Data from provider is printed	
+	void Provider::print()
+	{
+		
+	// Use of formatting from the provider itself after getting from file.
+	cout << "#" << number << endl;
+	cout << name << endl;
+	cout << specialty << endl;
+	cout << address_part1 << endl;
+	cout << address_part2 << endl;
+	cout << city << ", " << state << ". " << zipcode << endl;
+	cout << pNumber << endl;
+	cout << "\n";
+	}
+	
+	
+// main function that calls the object and sets the number of providers to the provider_array for the new_providers then returns.
+int main()
+{
+  int number_providers = 0;
+  Provider new_provider[40];
+  number_providers = build_provider_array(new_provider);
+  print_provider_array(new_provider, number_providers);
+  
+  return 0;
+}
